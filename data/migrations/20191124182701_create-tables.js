@@ -30,11 +30,24 @@ exports.up = function(knex) {
         .references("projects.id");
 
       table.boolean("completed", false).notNullable();
+    })
+    .createTable("project_resources", table => {
+      table
+        .integer("project_id")
+        .unsigned()
+        .notNullable()
+        .references("projects.id");
+      table
+        .integer("resources_id")
+        .unsigned()
+        .notNullable()
+        .references("resources.id");
     });
 };
 
 exports.down = function(knex) {
   return knex.schema
+    .dropTableIfExists("project_resources")
     .dropTableIfExists("tasks")
     .dropTableIfExists("resources")
     .dropTableIfExists("projects");
