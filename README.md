@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+A relational database stores all of the data in a format that is grouped into rows and columns. SQL is the query language that we use to be able to perform CRUD operations with the data.
+
 - [ ] Why do tables need a `primary key`?
 
-- [ ] What is the name given to a table column that references the primary key on another table.
+      Tables need primary keys in order to uniquely identify each row.
+
+* [ ] What is the name given to a table column that references the primary key on another table.
+        
+       Foreign Key
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+We need an intermediary table that holds foreign keys that reference the primary key on the related tables.
 
 ## Minimum Viable Product
 
@@ -54,7 +62,7 @@ Complete the following tasks:
 
 - [ ] Design the data model and use _knex migrations_ to create the database and tables.
 - [ ] Build an API with endpoints for:
-  - [ ] adding resources.
+  - [ x] adding resources.
   - [ x] retrieving a list of resources.
   - [ x] adding projects.
   - [ x] retrieving a list of projects.
